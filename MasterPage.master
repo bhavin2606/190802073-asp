@@ -1,37 +1,39 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- bootstrap-css -->
-    <link rel="stylesheet" href="src/css/bootstrap.min.css">
-    <!-- //bootstrap-css -->
-    <!-- Custom CSS -->
-    <link href="src/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="src/css/style-responsive.css" rel="stylesheet" />
-    <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
-        rel='stylesheet' type='text/css'>
-    <!-- font-awesome icons -->
-    <link rel="stylesheet" href="src/css/font.css" type="text/css" />
-    <link href="src/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/morris.css" type="text/css" />
-    <!-- calendar -->
-    <link rel="stylesheet" href="src/css/monthly.css">
-    <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="src/js/jquery2.0.3.min.js"></script>
-    <script src="src/js/raphael-min.js"></script>
-    <script src="src/js/morris.js"></script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="src/css/bootstrap.min.css" >
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="src/css/style.css" rel='stylesheet' type='text/css' />
+<link href="src/css/style-responsive.css" rel="stylesheet"/>
+<!-- font CSS -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="src/css/font.css" type="text/css"/>
+<link href="src/css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="src/css/morris.css" type="text/css"/>
+<!-- calendar -->
+<link rel="stylesheet" href="src/css/monthly.css">
+<!-- //calendar -->
+<!-- //font-awesome icons -->
+<script src="src/js/jquery2.0.3.min.js"></script>
+<script src="src/js/raphael-min.js"></script>
+<script src="src/js/morris.js"></script>
 </head>
 <body>
-    <section id="container">
+ <form id="form1" runat="server">
+    <div>
+<section id="container">
 <!--header start-->
 <header class="header fixed-top clearfix">
 <!--logo start-->
@@ -232,7 +234,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img alt="" src="src/images/2.png">
-                <span class="username">John Doe</span>
+                <span class="username"><asp:Literal ID="Literal1" runat="server"></asp:Literal></span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -255,12 +257,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a class="active" href="dashboard.aspx">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+                <li>
+                    <a class="active" href="manageuser.aspx">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Manage User</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="ManageService.aspx">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Manage Tour Services</span>
+                    </a>
+                </li>
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
@@ -460,9 +473,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //calendar -->
 
-    <form id="form1" runat="server">
-    <div>
-       
+  
+        
     </div>
     </form>
 </body>

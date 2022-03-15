@@ -23,17 +23,17 @@ public partial class login : System.Web.UI.Page
     {
         try
         {
-             SqlCommand cmd = new SqlCommand("SELECT COUNT(*)  FROM [login]  WHERE [email] = @email AND [password] = @password", con);
+        SqlCommand cmd = new SqlCommand("SELECT COUNT(*)  FROM [login]  WHERE [email] = @email AND [password] = @password", con);
         cmd.Parameters.AddWithValue("@email", TextBox1.Text.Trim());
         cmd.Parameters.AddWithValue("@password", TextBox2.Text.Trim());
         con.Open();
         int s = (int)cmd.ExecuteScalar();
-        if (s >= 1)
+        if (s == 1)
         {
             Session["email"] = TextBox1.Text;
             TextBox1.Text = string.Empty;
             TextBox2.Text = string.Empty;
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/dashboard.aspx");
         }
         else
         {
